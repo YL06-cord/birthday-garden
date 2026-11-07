@@ -29,6 +29,25 @@
 @keyframes card-draw{0%{transform:rotate(-2deg) scale(.92);opacity:.45}55%{transform:rotate(3deg) scale(1.04);opacity:1}100%{transform:rotate(-2deg) scale(1)}}@keyframes ring-pulse{0%,100%{transform:scale(.93);opacity:.2}50%{transform:scale(1.08);opacity:.65}}@keyframes orbit-celebrate{50%{transform:rotate(12deg) scale(1.15);box-shadow:0 0 35px #e5b6d6}}
 @media(max-width:700px){.chapter-nav{right:8px;gap:5px}.chapter-nav button{width:20px;height:20px;font-size:6px}.interactive-section{min-height:88svh;padding:74px 20px}.chapter-inner h2{font-size:28px;letter-spacing:1px}.chapter-copy{font-size:11px;letter-spacing:.1px}.star-collection{grid-template-columns:1fr;gap:10px;margin-top:30px}.star-card{min-height:105px;padding:14px 15px;display:grid;grid-template-columns:54px 1fr;text-align:left;justify-content:start;gap:2px 12px}.star-card-shine{grid-row:span 2;font-size:42px;align-self:center;text-align:center}.star-card strong{font-size:17px}.star-card small{font-size:10px}.interaction-status{font-size:10px;margin-top:22px}.fortune-card{min-height:250px;margin-top:30px}.fortune-card strong{font-size:19px}.timeline-cards{gap:12px;margin-top:30px;padding:7px 0 18px 25px}.timeline-cards::before{left:9px;transform:translateX(-50%) scaleY(0)}.timeline-cards.is-grown::before{transform:translateX(-50%) scaleY(1)}.timeline-cards button,.timeline-cards button:nth-child(even){align-self:stretch;width:100%;min-height:112px;padding:14px 12px;transform:translateX(-25px) rotate(-1deg)}.timeline-cards button.is-visible{transform:translateX(0) rotate(0)}.timeline-cards button::after,.timeline-cards button:nth-child(even)::after{left:-25px;right:auto;width:25px;transform-origin:right;background:linear-gradient(90deg,#e7b8d8,#f4d6a5)}.timeline-cards button::before,.timeline-cards button:nth-child(even)::before{left:-33px;right:auto}.timeline-cards button strong{font-size:16px}.timeline-cards button small{font-size:8px}.timeline-reply{font-size:16px;line-height:1.8}.future-grid{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:32px}.future-grid button{min-height:132px;padding:13px 8px}.future-grid button strong{font-size:16px}.future-grid button small{font-size:8px}.future-reply{font-size:16px;line-height:1.8}.mood-picker{grid-template-columns:repeat(2,1fr);gap:11px;margin-top:34px}.mood-picker button{min-height:105px}.mood-picker span{font-size:32px}.mood-reply{font-size:15px;line-height:1.8}.bouquet-scene{transform:scale(.88);margin:18px auto -1px}.bouquet-picker{grid-template-columns:1fr;gap:9px;margin-top:2px}.bouquet-picker button{min-height:74px;padding:10px 13px;display:grid;grid-template-columns:43px 1fr;text-align:left;justify-content:start;gap:1px 10px}.bouquet-picker button span{grid-row:span 2;font-size:28px;align-self:center;text-align:center}.bouquet-picker button strong{font-size:16px}.bouquet-picker button small{font-size:9px}.bouquet-reply{font-size:15px;line-height:1.8}.check-list{margin-top:28px}.check-list button{font-size:11px;padding:15px 9px}.surprise-boxes{gap:10px;margin-top:34px}.surprise-boxes button{width:92px;height:110px}.surprise-boxes span{font-size:30px}.surprise-boxes small{font-size:8px}.surprise-reply{font-size:15px}.constellation{height:290px;margin-top:28px}.constellation button{font-size:21px}.closing .celebration-button{font-size:11px;padding:14px 18px}}
 @media(prefers-reduced-motion:reduce){.chapter-nav button,.star-card,.fortune-card,.mood-picker button,.bouquet-picker button,.timeline-cards button,.future-grid button,.check-list button,.surprise-boxes button{transition:none}.heart-stage.is-complete .heart-outline .heart-fill{opacity:.75}}
+
+/* Gentle signposts for the interactive moments. They appear as each chapter enters view and move on after a tap. */
+.cue-target{position:relative}.tap-cue{position:absolute;z-index:8;top:-13px;right:14px;padding:4px 8px;border:1px solid #f4c8dc;background:#fff9f4;color:#9a6e91;border-radius:99px;font-size:9px;line-height:1;letter-spacing:.7px;white-space:nowrap;opacity:0;transform:translateY(5px);pointer-events:none;transition:opacity .25s,transform .25s}.cue-target.is-hinting{outline:2px solid #e7abc8;outline-offset:5px;animation:cue-glow 1.55s ease-in-out infinite}.cue-target.is-hinting .tap-cue{opacity:1;transform:translateY(0);animation:cue-bob 1.55s ease-in-out infinite}.constellation .tap-cue{top:-18px;right:-25px}.timeline-cards .tap-cue{top:-12px;right:12px}.button.cue-target .tap-cue{top:-12px;right:18px}.closing{transition:background 1.2s ease,color 1.2s ease}.closing.is-celebrating{background:radial-gradient(circle at 50% 30%,#4d315f 0,#271b3c 48%,#171225 100%);color:#fffaf8}.closing.is-celebrating::before{z-index:-1;width:900px;height:620px;background:radial-gradient(ellipse at center,#d997bf55 0,#73528b2b 32%,transparent 70%);animation:finale-aura 5s ease-in-out infinite}.closing.is-celebrating::after{content:'✦   ·   ✧   ·   ✦   ·   ✧';position:absolute;z-index:-1;inset:18% 0 auto;text-align:center;color:#f6d9a455;letter-spacing:24px;font-size:12px;animation:starfield-drift 9s linear infinite}.closing.is-celebrating .section-kicker,.closing.is-celebrating .closing-copy,.closing.is-celebrating .closing-signature,.closing.is-celebrating .celebration-status{color:#f5deea}.closing.is-celebrating h2{color:#fffaf8;text-shadow:0 0 26px #eeacd055}.closing.is-celebrating .closing-orbit{border-color:#f2c4da;color:#fff1f7;box-shadow:0 0 28px #e6aed455}.closing.is-celebrating .closing-orbit span,.closing.is-celebrating .closing-orbit i{color:#f8d99b}.closing.is-celebrating .celebration-button{background:#fff8fb;color:#6b426f;box-shadow:0 0 0 5px #f6c8df22,0 13px 35px #0c081666}.fireworks-layer{position:absolute;z-index:1;inset:0;pointer-events:none;overflow:hidden}.firework{position:absolute;left:var(--x);bottom:var(--base);width:1px;height:1px;color:var(--color)}.firework-rocket{position:absolute;left:0;bottom:0;width:3px;height:38px;border-radius:99px;background:linear-gradient(transparent,var(--color));box-shadow:0 0 12px 2px var(--color);opacity:0;animation:firework-rise 1.02s var(--delay) cubic-bezier(.22,.65,.35,1) both}.firework-burst{position:absolute;left:var(--dx);bottom:var(--dy);width:4px;height:4px;border-radius:50%;background:var(--color);box-shadow:0 0 22px 8px var(--color);opacity:0;animation:firework-flash .82s calc(var(--delay) + 1s) ease-out both}.firework-burst i{position:absolute;left:1px;top:1px;width:2px;height:2px;border-radius:50%;background:var(--color);box-shadow:0 0 7px 1px var(--color);transform-origin:0 0;animation:firework-spark 1.08s calc(var(--delay) + 1.02s + var(--spark-delay)) cubic-bezier(.1,.65,.3,1) both}.birthday-finale{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;margin:-10px auto 27px;color:#fff8fb;text-shadow:0 0 25px #e9a9cb88;animation:finale-in .9s ease both}.birthday-finale span{font-size:9px;letter-spacing:4px;color:#f4d69d}.birthday-finale strong{font-family:var(--serif);font-size:clamp(42px,7vw,72px);font-weight:500;line-height:1.1;letter-spacing:8px}.birthday-finale em{font-family:var(--serif);font-size:15px;font-style:normal;letter-spacing:2px;color:#f6dae8}.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:10px}.closing.is-celebrating .birthday-finale~.closing-orbit,.closing.is-celebrating .birthday-finale~.section-kicker,.closing.is-celebrating .birthday-finale~h2,.closing.is-celebrating .birthday-finale~.closing-copy,.closing.is-celebrating .birthday-finale~.closing-signature,.closing.is-celebrating .birthday-finale~.celebration-button,.closing.is-celebrating .birthday-finale~.celebration-status{position:relative;z-index:3}.closing.is-celebrating .button.cue-target.is-hinting{outline-color:#f7d59a}.closing.is-celebrating .tap-cue{display:none}
+@keyframes cue-glow{0%,100%{box-shadow:0 0 0 0 #e9a9c800}50%{box-shadow:0 0 0 8px #e9a9c83b,0 0 24px #e9a9c866}}@keyframes cue-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes firework-rise{0%{opacity:0;transform:translate(0,0) scale(.7)}12%{opacity:1}100%{opacity:0;transform:translate(var(--dx),calc(var(--dy) * -1)) scale(1)}}@keyframes firework-flash{0%{opacity:0;transform:scale(.2)}20%{opacity:1;transform:scale(1.7)}100%{opacity:0;transform:scale(.5)}}@keyframes firework-spark{0%{opacity:1;transform:rotate(var(--angle)) translateY(0) scale(1)}100%{opacity:0;transform:rotate(var(--angle)) translateY(var(--distance)) scale(.15)}}@keyframes finale-aura{0%,100%{opacity:.55;transform:translateX(-50%) scale(.94)}50%{opacity:1;transform:translateX(-50%) scale(1.07)}}@keyframes starfield-drift{from{transform:translateX(-2%)}to{transform:translateX(2%)}}
+@media(max-width:700px){.tap-cue{top:-10px;right:9px;padding:4px 6px;font-size:8px}.constellation .tap-cue{top:-16px;right:-21px}.birthday-finale{margin:-2px auto 21px;gap:6px}.birthday-finale strong{font-size:42px;letter-spacing:5px}.birthday-finale em{font-size:11px;letter-spacing:1px}.closing.is-celebrating .closing-orbit{margin-top:5px}.firework-rocket{height:28px}.firework-burst i{width:1.5px;height:1.5px}}
+@media(prefers-reduced-motion:reduce){.cue-target.is-hinting{animation:none;outline:2px solid #d999bd;outline-offset:4px}.cue-target.is-hinting .tap-cue{animation:none;opacity:1;transform:none}.closing.is-celebrating::before,.closing.is-celebrating::after{animation:none}.fireworks-layer{display:none}.birthday-finale{animation:none}.closing.is-celebrating{background:linear-gradient(145deg,#4a315b,#2b203f)}}
+
+/* The heart page uses a centered transform; the closing page needs a normal flow fade-in on narrow screens. */
+.closing.is-celebrating h2{animation:closing-title-in .8s ease both}.birthday-finale{animation:birthday-finale-in .9s ease both}
+@keyframes closing-title-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes birthday-finale-in{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.closing.is-celebrating h2,.birthday-finale{animation:none}}
+
+/* Keep the finale in the viewport when it appears, so showing it never pushes the page away from the tap. */
+.birthday-finale{position:absolute;left:50%;top:66px;width:min(92%,720px);margin:0;transform:translateX(-50%)}.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:138px}@keyframes birthday-finale-in{from{opacity:0;transform:translateX(-50%) translateY(12px) scale(.94)}to{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+@media(max-width:700px){.birthday-finale{top:66px}.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:132px}}
+
+/* Canvas fireworks carry the real launch trails, gravity and burst light. */
+.fireworks-layer{mix-blend-mode:screen;opacity:1}.fireworks-canvas,#fireworks-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:0}.closing.is-celebrating .closing-orbit{opacity:.32}.closing.is-celebrating #closing-title,.closing.is-celebrating .closing-copy,.closing.is-celebrating .closing-signature{opacity:.18;transition:opacity .7s ease}
+@media(max-width:700px){.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:0}}
 </style>
   
 </head>
@@ -224,6 +243,12 @@
     </section>
 
     <section class="closing section" id="closing" aria-labelledby="closing-title">
+      <div class="fireworks-layer" id="fireworks-layer" aria-hidden="true"><canvas id="fireworks-canvas"></canvas></div>
+      <div class="birthday-finale" id="birthday-finale" hidden>
+        <span>18TH BIRTHDAY</span>
+        <strong>生日快乐</strong>
+        <em>愿你永远明媚，永远被温柔记得。</em>
+      </div>
       <div class="closing-orbit" aria-hidden="true"><span>18</span><i>✦</i><i>✧</i><i>✦</i></div>
       <p class="section-kicker">A WISH TO KEEP</p>
       <h2 id="closing-title">愿你十八岁以后，<br><em>每一年都比上一年更快乐。</em></h2>
@@ -526,10 +551,303 @@ const refreshConstellation = () => {
 };
 constellationButtons.forEach((button) => button.addEventListener('click', () => { button.classList.toggle('is-lit'); refreshConstellation(); }));
 
+const cueGroups = [
+  { root: 'home', targets: ['#start-wishes'], label: '开启' },
+  { root: 'wishes', targets: ['#play-wishes'], label: '点这里' },
+  { root: 'timeline', targets: ['#timeline-cards button'], label: '点开回忆' },
+  { root: 'future', targets: ['#future-grid button'], label: '点亮愿望' },
+  { root: 'stars', targets: ['#star-collection button'], label: '收下星星' },
+  { root: 'fortune', targets: ['#draw-fortune'], label: '抽一张' },
+  { root: 'mood', targets: ['#mood-picker button'], label: '选一个' },
+  { root: 'bouquet', targets: ['#bouquet-picker button'], label: '选一朵' },
+  { root: 'list', targets: ['#check-list button'], label: '勾选愿望' },
+  { root: 'surprise', targets: ['#surprise-boxes button'], label: '打开彩蛋' },
+  { root: 'constellation', targets: ['#constellation-map button'], label: '点亮星图' },
+  { root: 'closing', targets: ['#celebrate'], label: '开始庆祝' }
+];
+const cueState = cueGroups.map((group) => ({
+  ...group,
+  rootElement: document.getElementById(group.root),
+  elements: group.targets.flatMap((selector) => [...document.querySelectorAll(selector)]),
+  started: false
+}));
+
+function cueEligible(element) {
+  return !element.dataset.interacted && (!element.closest('.timeline-cards') || element.classList.contains('is-visible'));
+}
+
+function showNextCue(group) {
+  if (!group.started) return;
+  const next = group.elements.find(cueEligible);
+  group.elements.forEach((element) => element.classList.remove('is-hinting'));
+  if (!next) return;
+  next.classList.add('is-hinting');
+}
+
+cueState.forEach((group) => {
+  group.elements.forEach((element) => {
+    element.classList.add('cue-target');
+    const cue = document.createElement('span');
+    cue.className = 'tap-cue';
+    cue.textContent = group.label;
+    cue.setAttribute('aria-hidden', 'true');
+    element.append(cue);
+    element.addEventListener('click', () => {
+      element.dataset.interacted = 'true';
+      element.classList.remove('is-hinting');
+      window.setTimeout(() => showNextCue(group), 180);
+    });
+  });
+});
+
+const cueObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    const group = cueState.find((item) => item.rootElement === entry.target);
+    if (!group) return;
+    group.started = true;
+    showNextCue(group);
+  });
+}, { threshold: .35, rootMargin: '0px 0px -8% 0px' });
+cueState.forEach((group) => { if (group.rootElement) cueObserver.observe(group.rootElement); });
+
+let fireworksTimer;
+let fireworksActive = false;
+const closing = document.querySelector('.closing');
+const fireworksLayer = document.getElementById('fireworks-layer');
+const fireworksCanvas = document.getElementById('fireworks-canvas');
+const fireworksContext = fireworksCanvas?.getContext('2d');
+const birthdayFinale = document.getElementById('birthday-finale');
+const fireworkColors = ['#f6d28f', '#f5b8d4', '#d4b9ee', '#fff7e5', '#e9a9bd'];
+const fireworksRockets = [];
+const fireworksSparks = [];
+const fireworksFlashes = [];
+let fireworksFrame;
+let fireworksLastTime = 0;
+let fireworksSize = { width: 1, height: 1 };
+let textParticles = [];
+let textRevealAt = 0;
+let textParticlesReady = false;
+
+function resizeFireworksCanvas() {
+  if (!fireworksCanvas || !fireworksContext) return;
+  const rect = closing.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  fireworksSize = { width: Math.max(1, rect.width), height: Math.max(1, rect.height) };
+  fireworksCanvas.width = Math.ceil(fireworksSize.width * dpr);
+  fireworksCanvas.height = Math.ceil(fireworksSize.height * dpr);
+  fireworksContext.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+function prepareFinaleText() {
+  textParticles = [];
+  textParticlesReady = false;
+  textRevealAt = performance.now() + 900;
+}
+
+function createFinaleTextParticles() {
+  if (!fireworksContext) return;
+  const width = fireworksSize.width;
+  const source = document.createElement('canvas');
+  source.width = Math.ceil(width);
+  source.height = 220;
+  const sourceContext = source.getContext('2d');
+  const fontSize = Math.min(94, Math.max(48, width * .16));
+  sourceContext.font = `600 ${fontSize}px BirthdaySerif, "Microsoft YaHei", sans-serif`;
+  sourceContext.textAlign = 'center';
+  sourceContext.textBaseline = 'middle';
+  sourceContext.fillStyle = '#fff';
+  sourceContext.fillText('生日快乐', width / 2, 105);
+  const pixels = sourceContext.getImageData(0, 0, source.width, source.height).data;
+  const step = width < 600 ? 5 : 4;
+  for (let y = 0; y < source.height; y += step) {
+    for (let x = 0; x < source.width; x += step) {
+      if (pixels[(y * source.width + x) * 4 + 3] < 140) continue;
+      textParticles.push({
+        x: Math.random() * width,
+        y: 75 + Math.random() * 120,
+        tx: x,
+        ty: y + 68,
+        size: 1 + Math.random() * 1.4,
+        alpha: .55 + Math.random() * .45,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
+  }
+  textParticlesReady = true;
+}
+
+function explodeRocket(rocket) {
+  const count = window.innerWidth < 600 ? 66 : 105;
+  fireworksFlashes.push({ x: rocket.x, y: rocket.y, radius: 3, alpha: 1, color: rocket.color });
+  for (let index = 0; index < count; index += 1) {
+    const angle = (index / count) * Math.PI * 2 + (Math.random() - .5) * .12;
+    const speed = 1.9 + Math.random() * 5.7;
+    fireworksSparks.push({
+      x: rocket.x,
+      y: rocket.y,
+      previousX: rocket.x,
+      previousY: rocket.y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      alpha: .78 + Math.random() * .22,
+      decay: .007 + Math.random() * .011,
+      gravity: .035 + Math.random() * .025,
+      color: index % 8 === 0 ? '#fff5d7' : rocket.color
+    });
+  }
+}
+
+function drawFireworks(now) {
+  if (!fireworksActive || document.hidden || !fireworksContext) {
+    fireworksFrame = undefined;
+    return;
+  }
+  if (!fireworksLastTime) fireworksLastTime = now;
+  const delta = Math.min((now - fireworksLastTime) / 16.67, 2.4);
+  fireworksLastTime = now;
+  const { width, height } = fireworksSize;
+  const context = fireworksContext;
+  context.globalCompositeOperation = 'source-over';
+  context.fillStyle = 'rgba(23, 14, 39, .2)';
+  context.fillRect(0, 0, width, height);
+  context.globalCompositeOperation = 'lighter';
+
+  for (let index = fireworksRockets.length - 1; index >= 0; index -= 1) {
+    const rocket = fireworksRockets[index];
+    if (now < rocket.startAt) continue;
+    rocket.previousX = rocket.x;
+    rocket.previousY = rocket.y;
+    rocket.x += rocket.vx * delta;
+    rocket.y += rocket.vy * delta;
+    rocket.vy += .035 * delta;
+    context.globalAlpha = .95;
+    context.strokeStyle = rocket.color;
+    context.lineWidth = 2.2;
+    context.beginPath();
+    context.moveTo(rocket.previousX, rocket.previousY);
+    context.lineTo(rocket.x, rocket.y);
+    context.stroke();
+    context.globalAlpha = .42;
+    context.lineWidth = 5;
+    context.beginPath();
+    context.moveTo(rocket.previousX, rocket.previousY);
+    context.lineTo(rocket.x, rocket.y);
+    context.stroke();
+    if (rocket.y <= rocket.targetY || rocket.vy > -1) {
+      explodeRocket(rocket);
+      fireworksRockets.splice(index, 1);
+    }
+  }
+
+  for (let index = fireworksSparks.length - 1; index >= 0; index -= 1) {
+    const spark = fireworksSparks[index];
+    spark.previousX = spark.x;
+    spark.previousY = spark.y;
+    spark.x += spark.vx * delta;
+    spark.y += spark.vy * delta;
+    spark.vy += spark.gravity * delta;
+    spark.vx *= .988 ** delta;
+    spark.alpha -= spark.decay * delta;
+    if (spark.alpha <= 0) { fireworksSparks.splice(index, 1); continue; }
+    context.globalAlpha = spark.alpha;
+    context.strokeStyle = spark.color;
+    context.lineWidth = 1.2;
+    context.beginPath();
+    context.moveTo(spark.previousX, spark.previousY);
+    context.lineTo(spark.x, spark.y);
+    context.stroke();
+  }
+
+  for (let index = fireworksFlashes.length - 1; index >= 0; index -= 1) {
+    const flash = fireworksFlashes[index];
+    flash.radius += 7 * delta;
+    flash.alpha -= .065 * delta;
+    if (flash.alpha <= 0) { fireworksFlashes.splice(index, 1); continue; }
+    context.globalAlpha = flash.alpha;
+    context.strokeStyle = flash.color;
+    context.lineWidth = 2;
+    context.beginPath();
+    context.arc(flash.x, flash.y, flash.radius, 0, Math.PI * 2);
+    context.stroke();
+  }
+
+  if (!textParticlesReady && now >= textRevealAt) createFinaleTextParticles();
+  if (textParticlesReady) {
+    context.shadowBlur = 8;
+    context.shadowColor = '#ffd982';
+    for (const particle of textParticles) {
+      particle.x += (particle.tx - particle.x) * .07 * delta;
+      particle.y += (particle.ty - particle.y) * .07 * delta;
+      context.globalAlpha = particle.alpha * (.82 + Math.sin(now / 330 + particle.phase) * .18);
+      context.fillStyle = '#ffe3a0';
+      context.fillRect(particle.x, particle.y, particle.size, particle.size);
+    }
+    context.shadowBlur = 0;
+  }
+  context.globalAlpha = 1;
+  context.globalCompositeOperation = 'source-over';
+  fireworksFrame = window.requestAnimationFrame(drawFireworks);
+}
+
+function launchFirework(delay = 0) {
+  if (!fireworksLayer || !fireworksActive || document.hidden) return;
+  const { width, height } = fireworksSize;
+  fireworksRockets.push({
+    x: width * (.12 + Math.random() * .76),
+    y: height + 12,
+    previousX: 0,
+    previousY: 0,
+    targetY: height * (.2 + Math.random() * .36),
+    vx: (Math.random() - .5) * .45,
+    vy: -8.4 - Math.random() * 2.2,
+    color: fireworkColors[Math.floor(Math.random() * fireworkColors.length)],
+    startAt: performance.now() + delay
+  });
+}
+
+function startFireworks() {
+  if (!fireworksActive || reducedMotion.matches || document.hidden || fireworksTimer) return;
+  resizeFireworksCanvas();
+  fireworksLastTime = 0;
+  fireworksFrame = window.requestAnimationFrame(drawFireworks);
+  launchFirework();
+  window.setTimeout(() => launchFirework(), 280);
+  window.setTimeout(() => launchFirework(), 610);
+  fireworksTimer = window.setInterval(() => launchFirework(), 1550 + Math.random() * 700);
+}
+
+function stopFireworks() {
+  window.clearInterval(fireworksTimer);
+  fireworksTimer = undefined;
+  if (fireworksFrame) window.cancelAnimationFrame(fireworksFrame);
+  fireworksFrame = undefined;
+  fireworksLastTime = 0;
+}
+
 document.getElementById('celebrate').addEventListener('click', () => {
+  fireworksActive = true;
+  prepareFinaleText();
+  resizeFireworksCanvas();
   createSparkles();
-  document.getElementById('celebration-status').textContent = '庆祝已开启：十八岁，尽情去发光吧。';
-  document.querySelector('.closing').classList.add('is-celebrating');
+  closing.classList.add('is-celebrating');
+  birthdayFinale.hidden = false;
+  document.getElementById('celebration-status').textContent = '生日快乐，烟花会一直为你亮着。';
+  document.getElementById('celebrate').querySelector('svg + span')?.replaceChildren(document.createTextNode('再放一束烟花'));
+  launchFirework();
+  if (!reducedMotion.matches) startFireworks();
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) stopFireworks();
+  else if (fireworksActive) startFireworks();
+});
+
+// The first visible control in each chapter gets a short cue, then the cue advances after each tap.
+cueState.forEach((group) => {
+  if (group.root === 'timeline') {
+    timelineButtons.forEach((button) => button.addEventListener('transitionend', () => showNextCue(group), { once: true }));
+  }
 });
 </script>
 </body>
