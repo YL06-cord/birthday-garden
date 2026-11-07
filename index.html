@@ -459,8 +459,9 @@ const revealTimeline = () => {
   if (timelineRevealStarted) return;
   timelineRevealStarted = true;
   timelineCards.classList.add('is-grown');
+  const timelineStagger = window.innerWidth <= 700 ? 140 : 420;
   timelineButtons.forEach((button, index) => {
-    window.setTimeout(() => button.classList.add('is-visible'), reducedMotion.matches ? 0 : index * 420);
+    window.setTimeout(() => button.classList.add('is-visible'), reducedMotion.matches ? 0 : index * timelineStagger);
   });
 };
 const timelineObserver = new IntersectionObserver((entries) => {
