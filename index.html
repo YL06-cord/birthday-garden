@@ -48,6 +48,11 @@
 /* Canvas fireworks carry the real launch trails, gravity and burst light. */
 .fireworks-layer{mix-blend-mode:screen;opacity:1}.fireworks-canvas,#fireworks-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;pointer-events:none}.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:0}.closing.is-celebrating .closing-orbit{opacity:.32}.closing.is-celebrating #closing-title,.closing.is-celebrating .closing-copy,.closing.is-celebrating .closing-signature{opacity:.18;transition:opacity .7s ease}
 @media(max-width:700px){.closing.is-celebrating .birthday-finale~.closing-orbit{margin-top:0}}
+
+/* Interaction guidance stays visual only: a soft halo marks the next tappable piece. */
+.tap-cue{display:none!important}.cue-target.is-hinting{outline:0;outline-offset:0;animation:cue-halo 1.6s ease-in-out infinite}.cue-target.is-hinting .tap-cue{display:none!important}.constellation button.cue-target.is-hinting{filter:drop-shadow(0 0 9px #f4c8df)}
+@keyframes cue-halo{0%,100%{box-shadow:0 0 0 0 #e9a9c800,0 0 0 #e9a9c800}50%{box-shadow:0 0 0 7px #f0bdd833,0 0 28px #e5a8ccaa}}
+@media(prefers-reduced-motion:reduce){.cue-target.is-hinting{animation:none;box-shadow:0 0 0 5px #e8b1cf55,0 0 20px #e5a8cc88}.constellation button.cue-target.is-hinting{filter:drop-shadow(0 0 9px #e6aecb)}}
 </style>
   
 </head>
@@ -638,6 +643,7 @@ function resizeFireworksCanvas() {
   fireworksCanvas.height = Math.ceil(fireworksSize.height * dpr);
   fireworksContext.setTransform(dpr, 0, 0, dpr, 0, 0);
 }
+window.addEventListener('resize', () => { if (fireworksActive) resizeFireworksCanvas(); });
 
 function prepareFinaleText() {
   textParticles = [];
