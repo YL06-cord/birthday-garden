@@ -53,6 +53,14 @@
 .tap-cue{display:none!important}.cue-target.is-hinting{outline:0;outline-offset:0;animation:cue-halo 1.6s ease-in-out infinite}.cue-target.is-hinting .tap-cue{display:none!important}.constellation button.cue-target.is-hinting{filter:drop-shadow(0 0 9px #f4c8df)}
 @keyframes cue-halo{0%,100%{box-shadow:0 0 0 0 #e9a9c800,0 0 0 #e9a9c800}50%{box-shadow:0 0 0 7px #f0bdd833,0 0 28px #e5a8ccaa}}
 @media(prefers-reduced-motion:reduce){.cue-target.is-hinting{animation:none;box-shadow:0 0 0 5px #e8b1cf55,0 0 20px #e5a8cc88}.constellation button.cue-target.is-hinting{filter:drop-shadow(0 0 9px #e6aecb)}}
+.cue-target.is-hinting .tap-cue{display:block!important;top:-8px;right:-8px;width:13px;height:13px;padding:0;border:2px solid #fff7fb;background:#fff7fb;border-radius:50%;color:transparent;font-size:0;line-height:0;box-shadow:0 0 8px 2px #f2bad9,0 0 18px 7px #f2bad966;opacity:1;transform:none;animation:cue-pointer 1.7s ease-in-out infinite;overflow:visible}
+.cue-target.is-hinting .tap-cue::before,.cue-target.is-hinting .tap-cue::after{content:'';position:absolute;inset:-8px;border:1px solid #f4bddb99;border-radius:50%;animation:cue-ring 1.7s ease-out infinite;pointer-events:none}
+.cue-target.is-hinting .tap-cue::after{inset:-15px;animation-delay:.34s;opacity:.62}
+.button.cue-target.is-hinting .tap-cue{top:50%;right:14px;transform:translateY(-50%)}
+@keyframes cue-pointer{0%,100%{opacity:.68;transform:scale(.84)}45%{opacity:1;transform:scale(1)}70%{opacity:.82;transform:scale(.92)}}
+@keyframes cue-ring{0%{opacity:.85;transform:scale(.55)}70%,100%{opacity:0;transform:scale(1.45)}}
+@media(max-width:700px){.cue-target.is-hinting .tap-cue{width:12px;height:12px;top:-7px;right:-7px}.button.cue-target.is-hinting .tap-cue{top:50%;right:12px}}
+@media(prefers-reduced-motion:reduce){.cue-target.is-hinting .tap-cue{animation:none;opacity:1;transform:none}.cue-target.is-hinting .tap-cue::before,.cue-target.is-hinting .tap-cue::after{animation:none;opacity:.55;transform:none}}
 </style>
   
 </head>
